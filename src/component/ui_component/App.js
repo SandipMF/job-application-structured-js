@@ -1,7 +1,8 @@
 import { jobApplicationSummary } from "./JobApplicationSummary";
-import { createForm } from "./JobApplicationCreateForm";
-import { jobApplicationListTable } from "./JobApplicationTable";
-import { editJobApplicationForm } from "./JobApplicationEditForm";
+import { createForm } from "./JobApplicationCreateForm.js";
+import { jobApplicationListTable } from "./JobApplicationTable.js";
+import { editJobApplicationForm } from "./JobApplicationEditForm.js";
+import { initializeState, subscribeToApplications } from "../state.js";
 
 export function App() {
   const bodyContainer = document.createElement("div");
@@ -16,17 +17,38 @@ export function App() {
   bodyContainer.appendChild(nav);
 
   //   for Summary
-  bodyContainer.appendChild(jobApplicationSummary());
+  const jobApplicationSummaryDiv = document.createElement("div");
+  jobApplicationSummaryDiv.className = "summary-row";
+  // jobApplicationSummaryDiv.appendChild(jobApplicationSummaryDiv);
+  bodyContainer.appendChild(jobApplicationSummaryDiv)//(jobApplicationSummary());
 
+  // From with Table
   const formWithTable = document.createElement("div");
   formWithTable.className = "form-with-table";
 
+  // Form
   formWithTable.appendChild(createForm());
-  formWithTable.appendChild(jobApplicationListTable());
+
+  const tableWrapper = document.createElement("div");
+  tableWrapper.className = "application-list-section";
+  formWithTable.appendChild(tableWrapper);
+
+  subscribeToApplications((applications) => {
+    // Table
+    const newTable = jobApplicationListTable(applications);
+    tableWrapper.innerHTML = "";
+    tableWrapper.appendChild(newTable);
+
+    const newJob = jobApplicationSummary(applications);
+    jobApplicationSummaryDiv.innerHTML = "";
+    jobApplicationSummaryDiv.append(newJob);
+  });
 
   bodyContainer.appendChild(formWithTable);
 
+  // Edit Form
   bodyContainer.appendChild(editJobApplicationForm());
 
+  initializeState();
   return bodyContainer;
 }

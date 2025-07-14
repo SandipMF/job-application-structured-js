@@ -115,10 +115,11 @@ nav div {
   /* background-color: #282c34; */
   padding: 10px;
 }
-.application-list-section div {
+.application-list-section div div {
   justify-content: center;
   /* align-items: center; */
   display: flex;
+  
 }
 
 .application-list-table {
