@@ -33,6 +33,22 @@ export function addApplication(newApplication) {
   storeDataInLocalStorage("job_applications", appState.applications);
 }
 
+// Delete appliction
+export function deleteApplication(id) {
+  appState.applications = appState.applications.filter((app) => app.id !== id);
+  storeDataInLocalStorage("job_applications", appState.applications);
+}
+
+// Edit application
+export function editApplication(applicationData, index) {
+  const updatedApplications = [...appState.applications];
+
+  updatedApplications[index] = applicationData;
+
+  appState.applications = updatedApplications;
+  storeDataInLocalStorage("job_applications", updatedApplications);
+}
+
 // Get current state (read-only)
 export function getApplications() {
   return appState.applications;

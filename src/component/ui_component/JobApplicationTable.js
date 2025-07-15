@@ -26,8 +26,8 @@ export function jobApplicationListTable(applicationsDataArr) {
                   <td>${data.jobType}</td>
                   <td>${data.status}</td>
                   <td>
-                    <button class="edit-btn" data-index="${index}">Edit</button>
-                    <button class="delete-btn" data-index="${index}">Delete</button>
+                    <button class="editBtn" data-index="${index}">Edit</button>
+                    <button class="deleteBtn" data-index="${index}">Delete</button>
                   </td>
                 </tr>`;
                 })

@@ -66,6 +66,7 @@ nav div {
   justify-content: center;
   align-items: center;
   padding-top: 10px;
+  height: 350px;
 }
 
 .form-section h3 {
@@ -119,7 +120,6 @@ nav div {
   justify-content: center;
   /* align-items: center; */
   display: flex;
-  
 }
 
 .application-list-table {
@@ -127,6 +127,7 @@ nav div {
   border: 1px solid #ccc;
   justify-content: center;
   border-collapse: collapse;
+  margin: 20px;
 }
 .application-list-table thead tr th {
   border-right: 1px solid #ccc;
@@ -164,7 +165,7 @@ nav div {
 /* --------EditForm------- */
 .edit-form {
   /* display: flex; */
-  display: none;
+  /* display: none; */
   position: fixed;
   top: 0;
   left: 0;
