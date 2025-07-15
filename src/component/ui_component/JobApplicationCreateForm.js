@@ -99,16 +99,6 @@ export function createForm() {
     if (errors.length > 0) {
       alert("Please check this validation error: \n" + errors.join("\n"));
     } else {
-      console.log("Form submitted with:", {
-        company,
-        role,
-        jobType,
-        location,
-        date,
-        status,
-        note,
-      });
-
       const newApplication = {
         id: crypto.randomUUID(),
         company: company,

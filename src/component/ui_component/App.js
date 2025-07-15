@@ -62,8 +62,6 @@ export function App() {
         const index = button.dataset.index;
         const application = applications[index];
         if (confirm(`Delete application for ${application.company}?`)) {
-          // deleteApplicationById(application.id);
-          console.log(`Click on edit botton for row index=> ${application.id}`);
           deleteApplication(application.id);
         }
       });

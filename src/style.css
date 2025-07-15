@@ -176,9 +176,37 @@ nav div {
   justify-content: center;
   z-index: 999;
 }
+.edit-form-section {
+  border: 1px solid black;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+  margin-top: 20px;
+}
+.edit-form h3 {
+  text-align: center;
+}
 
 .edit-content {
   background: #fff;
   padding: 20px 30px;
   border-radius: 10px;
+}
+
+.updateBtn {
+  height: 30px;
+  width: 150px;
+  border-radius: 5px;
+  color: green;
+  font-weight: bold;
+  font-size: small;
+}
+
+.cancelBtn {
+  height: 30px;
+  width: 100px;
+  border-radius: 5px;
+  color: white;
+  background-color: darkred;
 }

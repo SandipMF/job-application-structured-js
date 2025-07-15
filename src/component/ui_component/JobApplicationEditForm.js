@@ -7,7 +7,7 @@ export function editJobApplicationForm(editApplicationData, index) {
   div.innerHTML = `
       <div class="edit-content">
         <h3>Edit Job Application</h3>
-        <div class="form-section">
+        <div class="edit-form-section">
           <form class="application-form" id="editApplicationForm">
             <div>
               <label>Company:</label>
@@ -51,9 +51,10 @@ export function editJobApplicationForm(editApplicationData, index) {
                 placeholder="Write your notes..."
               ></textarea>
             </div>
-
-            <button type="submit">Update Application</button>
-            <button type="button" id='cancelEditForm'>Cancel</button>
+            <div>
+              <button type="submit" class='updateBtn'>Update Application</button>
+              <button type="button" class='cancelBtn' id='cancelEditForm'>Cancel</button>
+            </div>
           </form>
         </div>
       </div>
@@ -85,10 +86,10 @@ export function editJobApplicationForm(editApplicationData, index) {
     const jobTypeSelectedValue = jobTypeSelect.value;
     if (jobTypeSelectedValue === "Onsite") {
       locationDiv.style.display = "flex";
-      locationField.required = true;
+      // locationField.required = true;
     } else {
       locationDiv.style.display = "none";
-      locationField.required = false;
+      // locationField.required = false;
     }
   });
   jobTypeSelect.dispatchEvent(new Event("change"));
@@ -121,7 +122,7 @@ export function editJobApplicationForm(editApplicationData, index) {
         status: status.value,
         note: note.value.trim(),
       };
-      console.log("Form submitted with:", editedApplication);
+
       editApplication(editedApplication, index);
 
       div.style.display = "none";
