@@ -1,4 +1,4 @@
-import { editApplication } from "../state";
+import { editApplication } from "../../state";
 
 export function editJobApplicationForm(editApplicationData, index) {
   const div = document.createElement("div");

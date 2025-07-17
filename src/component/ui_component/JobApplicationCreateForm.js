@@ -1,4 +1,4 @@
-import { addApplication } from "../state";
+import { addApplication } from "../../state";
 
 export function createForm() {
   const div = document.createElement("div");

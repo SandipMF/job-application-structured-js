@@ -6,7 +6,7 @@ import {
   deleteApplication,
   initializeState,
   subscribeToApplications,
-} from "../state.js";
+} from "../../state.js";
 
 export function App() {
   const bodyContainer = document.createElement("div");
